@@ -1,66 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav>
+    <nav>
 
-<h2>Blog Management System</h2>
+        <h2>Blogify</h2>
 
-<a href="index.html">Home</a>
-<a href="add-blog.html">Add Blog</a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="add-blog.html">Add Blog</a>
+        </div>
 
-</nav>
+    </nav>
 
-<hr>
+    <div class="container">
 
-<h1>Add Blog</h1>
+        <h1>Add New Blog</h1>
 
-<form>
+        <form>
 
-<label>Title</label>
+            <label>Title</label>
+            <input type="text" placeholder="Enter Blog Title">
 
-<br>
+            <label>Author</label>
+            <input type="text" placeholder="Author Name">
 
-<input type="text">
+            <label>Description</label>
 
-<br><br>
+            <textarea rows="8" placeholder="Write your blog..."></textarea>
 
-<label>Author</label>
+            <button type="submit">
+                Publish Blog
+            </button>
 
-<br>
+        </form>
 
-<input type="text">
+    </div>
 
-<br><br>
-
-<label>Description</label>
-
-<br>
-
-<textarea rows="8"></textarea>
-
-<br><br>
-
-<button type="submit">
-
-Add Blog
-
-</button>
-
-</form>
-
-<hr>
-
-<footer>
-
-<p>© 2026 Blog Management System</p>
-
-</footer>
+    <footer>
+        © 2026 Blogify 
+    </footer>
 
 </body>
+
 </html>
