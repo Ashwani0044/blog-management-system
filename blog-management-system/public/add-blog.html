@@ -28,21 +28,39 @@
 
         <form>
 
+            <div class="message"></div>
+        
             <label>Title</label>
-            <input type="text" placeholder="Enter Blog Title">
-
+            <input
+                type="text"
+                id="title"
+                placeholder="Enter Blog Title">
+        
             <label>Author</label>
-            <input type="text" placeholder="Author Name">
-
+            <input
+                type="text"
+                id="author"
+                placeholder="Author Name">
+        
             <label>Description</label>
-
-            <textarea rows="8" placeholder="Write your blog..."></textarea>
-
+        
+            <textarea
+                id="description"
+                rows="8"
+                maxlength="500"
+                placeholder="Write your blog..."></textarea>
+        
+            <small id="counter">
+                0/500 Characters
+            </small>
+        
             <button type="submit">
                 Publish Blog
             </button>
-
+        
         </form>
+        
+        <script src="js/script.js"></script>
 
     </div>
 

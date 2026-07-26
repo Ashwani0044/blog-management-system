@@ -17,7 +17,7 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:22px 8%;
+    padding:18px 8%;
     background:rgba(20, 44, 100, 0.95);
     backdrop-filter:blur(10px);
     border-bottom:1px solid #334155;
@@ -150,4 +150,30 @@ footer{
     padding:25px;
     color:#94A3B8;
     border-top:1px solid #334155;
+}
+
+.message{
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:600;
+    display:none;
+}
+
+.message.error{
+    display:block;
+    background:#7f1d1d;
+    color:#fecaca;
+}
+
+.message.success{
+    display:block;
+    background:#14532d;
+    color:#bbf7d0;
+}
+
+small{
+    display:block;
+    margin-top:8px;
+    color:#94A3B8;
 }
