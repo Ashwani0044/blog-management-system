@@ -177,3 +177,25 @@ small{
     margin-top:8px;
     color:#94A3B8;
 }
+
+.blog-card small{
+
+    display:block;
+
+    color:#94A3B8;
+
+    margin:10px 0;
+
+}
+
+.date{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#8B5CF6;
+
+    font-size:14px;
+
+}

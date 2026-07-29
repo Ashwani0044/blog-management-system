@@ -11,7 +11,7 @@ description.addEventListener("input", () => {
     counter.innerText = `${description.value.length}/500 Characters`;
 });
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
@@ -40,10 +40,44 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
-    message.innerHTML = "Blog validated successfully!";
-    message.classList.add("success");
+    try {
 
-    form.reset();
-    counter.innerText = "0/500 Characters";
+        const response = await fetch("/api/blogs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: title.value,
+                author: author.value,
+                description: description.value
+            })
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+
+            message.innerHTML = "✅ Blog added successfully!";
+            message.classList.add("success");
+
+            form.reset();
+            counter.innerText = "0/500 Characters";
+
+        }else{
+
+            message.innerHTML = result.message;
+            message.classList.add("error");
+
+        }
+
+    } catch(err){
+
+        console.log(err);
+
+        message.innerHTML = "Something went wrong!";
+        message.classList.add("error");
+
+    }
 
 });
