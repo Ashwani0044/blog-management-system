@@ -28,24 +28,22 @@ async function loadBlogs() {
 
             blogContainer.innerHTML += `
 
-                <div class="blog-card">
-
-                    <h3>${blog.title}</h3>
-
-                    <small>
-                        By ${blog.author}
-                    </small>
-
-                    <p>
-                        ${blog.description}
-                    </p>
-
-                    <span class="date">
-                        ${blog.createdAt}
-                    </span>
-
-                </div>
-
+            <div class="blog-card">
+            
+                <h3>${blog.title}</h3>
+            
+                <small>By ${blog.author}</small>
+            
+                <p>${blog.description}</p>
+            
+                <span class="date">${blog.createdAt}</span>
+            
+                <button onclick="editBlog(${blog.id})">
+                    Edit
+                </button>
+            
+            </div>
+            
             `;
 
         });
@@ -68,3 +66,41 @@ async function loadBlogs() {
 }
 
 loadBlogs();
+
+async function editBlog(id){
+
+    const title = prompt("Enter new title");
+
+    if(!title) return;
+
+    const author = prompt("Enter author");
+
+    if(!author) return;
+
+    const description = prompt("Enter description");
+
+    if(!description) return;
+
+    const response = await fetch(`/api/blogs/${id}`,{
+
+        method:"PUT",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+            title,
+            author,
+            description
+        })
+
+    });
+
+    const result = await response.json();
+
+    alert(result.message);
+
+    loadBlogs();
+
+}

@@ -43,4 +43,29 @@ router.post("/", (req, res) => {
 
 });
 
+router.put("/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    const {title, author, description} = req.body;
+
+    const blog = blogs.find(blog => blog.id == id)
+
+    if(!blog) {
+        return res.status(404).json({
+            success: false,
+            message: "Blog not found!"
+        });
+    }
+
+    blog.title = title || blog.title;
+    blog.author = author || blog.author;
+    blog.description = description || blog.description;
+
+    res.status(200).json({
+        success: true,
+        message: "Blog updated successfully!",
+        data: blog
+    });
+});
+
 module.exports = router;
