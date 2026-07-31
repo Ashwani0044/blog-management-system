@@ -199,3 +199,17 @@ small{
     font-size:14px;
 
 }
+
+.btn-group{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.delete-btn{
+    background:#dc2626;
+}
+
+.delete-btn:hover{
+    background:#b91c1c;
+}

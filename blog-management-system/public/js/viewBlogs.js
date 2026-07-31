@@ -29,21 +29,27 @@ async function loadBlogs() {
             blogContainer.innerHTML += `
 
             <div class="blog-card">
-            
+
                 <h3>${blog.title}</h3>
-            
+
                 <small>By ${blog.author}</small>
-            
+
                 <p>${blog.description}</p>
-            
+
                 <span class="date">${blog.createdAt}</span>
-            
-                <button onclick="editBlog(${blog.id})">
-                    Edit
-                </button>
-            
+
+                <div class="btn-group">
+                    <button onclick="editBlog(${blog.id})">
+                        Edit
+                    </button>
+
+                    <button class="delete-btn" onclick="deleteBlog(${blog.id})">
+                        Delete
+                    </button>
+                </div>
+
             </div>
-            
+
             `;
 
         });
@@ -104,3 +110,30 @@ async function editBlog(id){
     loadBlogs();
 
 }
+
+async function deleteBlog(id) {
+
+    const confirmDelete = confirm("Are you sure you want to delete this blog?");
+
+    if (!confirmDelete) return;
+
+    try {
+
+        const response = await fetch(`/api/blogs/${id}`, {
+            method: "DELETE"
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+
+        loadBlogs();
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Failed to delete blog.");
+
+    }
+
+} 
