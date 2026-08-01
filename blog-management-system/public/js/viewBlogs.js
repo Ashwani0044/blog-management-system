@@ -39,6 +39,7 @@ async function loadBlogs() {
                 <span class="date">${blog.createdAt}</span>
 
                 <div class="btn-group">
+                
                     <button onclick="editBlog(${blog.id})">
                         Edit
                     </button>
