@@ -197,16 +197,33 @@ form{
 
 label{
     display:block;
-    margin-top:20px;
-    margin-bottom:8px;
+    margin-top:24px;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:600;
+    color:#F8FAFC;
 }
 
 input,
 textarea{
 
-    background:rgba(255,255,255,.05);
+    width:100%;
 
-    transition:.35s;
+    padding:16px 18px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    border:1px solid #2f3845;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:17px;
+
+    transition:.3s;
 
 }
 
@@ -365,4 +382,78 @@ small{
 
 .delete-btn:hover{
     background:#b91c1c;
+}
+
+.empty-state{
+
+    text-align:center;
+
+    padding:80px 40px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    animation:fadeUp .8s ease;
+
+}
+
+.empty-state h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(90deg,#8B5CF6,#06B6D4);
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.empty-state p{
+
+    color:#CBD5E1;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+}
+
+.start-btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:linear-gradient(135deg,#8B5CF6,#06B6D4);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.start-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(6,182,212,.35);
+
 }
