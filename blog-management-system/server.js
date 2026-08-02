@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Static Files
-app.use(express.static("public"));
+app.use(express.static("docs"));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "docs", "index.html"));
 });
 
 app.get("/add-blog", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "add-blog.html"));
+    res.sendFile(path.join(__dirname, "docs", "add-blog.html"));
 });
 
 // API Routes
