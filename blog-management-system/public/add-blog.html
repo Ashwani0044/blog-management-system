@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>BlogPulse</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="add-blog.html">Add Blog</a>
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+        <h1>Add New Blog</h1>
+
+        <form>
+
+            <div class="message"></div>
+        
+            <label>Title</label>
+            <input
+                type="text"
+                id="title"
+                placeholder="Enter Blog Title">
+        
+            <label>Author</label>
+            <input
+                type="text"
+                id="author"
+                placeholder="Author Name">
+        
+            <label>Description</label>
+        
+            <textarea
+                id="description"
+                rows="8"
+                maxlength="500"
+                placeholder="Write your blog..."></textarea>
+        
+            <small id="counter">
+                0/500 Characters
+            </small>
+        
+            <button type="submit">
+                Publish Blog
+            </button>
+        
+        </form>
+        
+        <script src="js/script.js"></script>
+
+    </div>
+
+    <footer>
+        © 2026 BlogPulse
+    </footer>
+
+</body>
+
+</html>
