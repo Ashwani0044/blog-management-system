@@ -75,11 +75,23 @@ async function loadBlogs() {
         console.log(error);
 
         blogContainer.innerHTML = `
-            <div class="blog-card">
-                <h3>Error</h3>
-                <p>Unable to load blogs.</p>
-            </div>
-        `;
+            
+                <div class="empty-state">
+        
+                    <h2>Welcome to BlogPulse</h2>
+        
+                    <p>
+                        No blogs have been published yet.
+                        Start sharing your ideas, stories, and knowledge with the world!
+                    </p>
+        
+                    <a href="add-blog.html" class="start-btn">
+                        Start Posting
+                    </a>
+        
+                </div>
+        
+            `;
 
     }
 
