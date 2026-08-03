@@ -1,5 +1,6 @@
 const blogContainer = document.getElementById("blog-container");
 
+
 async function loadBlogs() {
 
     try {
@@ -13,12 +14,24 @@ async function loadBlogs() {
         if (blogs.length === 0) {
 
             blogContainer.innerHTML = `
-                <div class="blog-card">
-                    <h3>No Blogs Yet..</h3>
-                    <p>Create your first blog from the Add Blog page.</p>
+            
+                <div class="empty-state">
+        
+                    <h2>Welcome to BlogPulse</h2>
+        
+                    <p>
+                        No blogs have been published yet.
+                        Start sharing your ideas, stories, and knowledge with the world!
+                    </p>
+        
+                    <a href="add-blog.html" class="start-btn">
+                        Start Posting
+                    </a>
+        
                 </div>
+        
             `;
-
+        
             return;
         }
 
