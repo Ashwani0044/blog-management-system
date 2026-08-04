@@ -43,6 +43,7 @@ router.post("/", (req, res) => {
 
 });
 
+// update BLog
 router.put("/:id", (req, res) => {
     const id = Number(req.params.id);
 
